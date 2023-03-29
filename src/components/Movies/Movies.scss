@@ -1,0 +1,25 @@
+@import "/src/scss/partials/mixins";
+@import "/src/scss/partials/custom";
+
+.section {
+  padding: 4rem 2rem;
+  margin: 0 0 3rem;
+
+  @include mobile {
+    padding: 4rem 0 0;
+  }
+
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+
+  @include tablet {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  &__more {
+    @include flex(row, nowrap, center, center);
+  }
+}

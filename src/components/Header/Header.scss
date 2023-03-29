@@ -1,0 +1,62 @@
+@import "/src/scss/partials/mixins";
+@import "/src/scss/partials/custom";
+
+.Header {
+  width: 100%;
+  color: $white;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  transition: height 0.3s ease, background-color 0.3s ease;
+
+  &-shrink {
+    height: 6rem;
+    background-color: #0f0f0f;
+  }
+
+  &-left {
+    @include flex(row, wrap, flex-start, center);
+    position: relative;
+    max-width: 104rem;
+    margin: auto;
+    padding: 0 3rem;
+  }
+
+  &-h1 {
+    max-width: 7rem;
+    margin: 0 1.5625rem 0 0;
+  }
+
+  &-ul {
+    @include flex(row, wrap, space-between, center);
+    gap: 1.25rem;
+    font-size: 1rem;
+  }
+
+  &-li {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      transition: width 0.5s ease;
+      height: 2px;
+      background-color: $main-color;
+    }
+
+    &.active::after,
+    &:hover::after {
+      width: 3rem;
+    }
+  }
+
+  &-a {
+    &:hover {
+      color: $main-color;
+    }
+  }
+}

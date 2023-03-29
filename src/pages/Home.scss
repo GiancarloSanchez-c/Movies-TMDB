@@ -1,0 +1,28 @@
+@import "/src/scss/partials/mixins";
+@import "/src/scss/partials/custom";
+
+
+.home {
+
+  &__h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+   
+    @include mobile {
+    font-size: 1rem;
+    }
+
+  }
+  .section {
+    max-width: 104rem;
+    margin: auto;
+    padding: 0 1rem;
+    
+    &__header {
+      @include flex(row, nowrap, space-between, center);
+      margin: 2rem ;
+    }
+
+  }
+
+} 

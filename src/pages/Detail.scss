@@ -1,0 +1,130 @@
+@import "/src/scss/partials/mixins";
+@import "/src/scss/partials/custom";
+
+.banner {
+  height: 50vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
+}
+
+.movie-content {
+  @include flex(row, nowrap, flex-start, flex-start);
+  max-width: 1260px;
+  margin: -200px auto 0;
+  position: relative;
+  padding: 0 2rem;
+
+  &__poster {
+    flex: 1;
+
+    @include mobile {
+      display: none;
+    }
+
+    &__img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $border-radius;
+      padding-top: 165%;
+    }
+  }
+
+  &__info {
+    width: 70%;
+    padding-left: 2rem;
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+      padding-left: 0;
+    }
+    .title {
+      font-size: 4rem;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .genres {
+      margin: 2rem 0;
+
+      @include mobile() {
+        @include flex(row, wrap, unset,center);
+        gap: 0.625rem;
+      }
+
+      &__item {
+        padding: 0.5rem 1.5rem;
+        border: 2px solid $white;
+        border-radius: $border-radius;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: $body-bg;
+      }
+    }
+
+    .overview {
+      @include mobile() {
+        font-size: .85rem;
+        line-height: 1.8rem;
+        margin: 1rem 0 2rem; 
+      }
+    }
+
+  }
+
+}
+
+.casts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+
+  &__item {
+    &__img {
+      padding-top: 160px;
+      background-size: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    &__name {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.video {
+  margin-bottom: 3rem;
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.container {
+  max-width: 1660px;
+  margin: auto;
+  padding: 0 2.5rem;
+}

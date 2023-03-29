@@ -1,0 +1,16 @@
+@import "/src/scss/partials/mixins";
+@import "/src/scss/partials/custom";
+
+.movie-list {
+  .swiper-slide {
+      width: 18%;
+
+      @include tablet {
+          width: 30%;
+      }
+
+      @include mobile {
+          width: 40%;
+      }
+  }
+}

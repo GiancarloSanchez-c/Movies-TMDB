@@ -1,0 +1,8 @@
+@import "/src/scss/partials/_custom", "/src/scss/partials/_keyframes", "/src/scss/partials/_mixins", "/src/scss/partials/_reset";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+
+
+.container {
+  max-width: 104rem;
+  margin: auto;
+}
